@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Clean up Rust cargo registry directories.
+#
+# This script deletes cargo registry directories 'cache' and 'src'.
+#
+# The default directories are:
+#
+#     * ~/.cargo/registry/cache
+#     * ~/.cargo/registry/src
+#
+# If you prefer a different cargo directory,
+# then set env var '$CARGO_HOME'.
+
+cargo_home=${CARGO_HOME:-$HOME/.cargo}
+rm -rf "$cargo_home/registry/{cache,src}"
